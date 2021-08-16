@@ -1,5 +1,6 @@
 import React from 'react';
 import TimeInput from './TimeImput';
+import TimeDisplay from './TimeDisplay';
 
 class KountDown extends React.Component {
     constructor () {
@@ -20,10 +21,11 @@ startCountdown = () => {
 }
 
     render(){
+        const {secondsRemaining} = this.state
         return (
             <>
             <TimeInput />
-            <p>{ this.state.secondsRemaining }</p>
+            <TimeDisplay secondsRemaining = { secondsRemaining } />
             <button onClick = { this.startCountdown }>Kount</button>
             </>
         );
